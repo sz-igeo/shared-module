@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+i {
+  cursor: pointer;
+  &.icon-delete {
+    color: red;
+  }
+  &.icon-add {
+    color: #2c9cfa;
+  }
+}

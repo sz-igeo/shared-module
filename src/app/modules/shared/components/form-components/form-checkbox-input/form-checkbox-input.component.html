@@ -1,0 +1,6 @@
+<div class="wrapper">
+  <div *ngFor="let item of items" class="checkbox-item">
+    <input type="checkbox" [attr.disabled]="isReadOnly ? '' : null" group="group" name="item.label" value="item.value" style="margin-right: 3px;"
+      [checked]="isCheck(item)" (click)="clickItem($event,item)" /> {{item.label}}
+  </div>
+</div>

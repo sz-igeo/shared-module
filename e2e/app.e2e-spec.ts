@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('shared-module App', () => {
+describe('@cmss/shared-module App', () => {
   let page: AppPage;
 
   beforeEach(() => {

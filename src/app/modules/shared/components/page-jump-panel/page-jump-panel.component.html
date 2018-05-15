@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <div class="bg-img"></div>
+  <div class="text-info">
+    <span>{{tipText}}成功，页面即将跳转
+      <span style="color: red;">{{countdown}}</span>
+      s
+      <ng-container [ngSwitch]="8 % _ellipsis">
+        <span class="ellipsis-span" *ngSwitchCase="3">...</span>
+        <span class="ellipsis-span" *ngSwitchCase="2">..</span>
+        <span class="ellipsis-span" *ngSwitchCase="1">.</span>
+      </ng-container>
+
+    </span>
+    <a [routerLink]="routerPath">{{jumpText}}</a>
+  </div>
+</div>
