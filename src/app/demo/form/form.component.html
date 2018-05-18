@@ -28,10 +28,38 @@
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
-      <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="favourite">Favourite</nz-form-label>
-      <nz-form-control [nzSm]="14" [nzXs]="24">
-        <cmss-form-checkbox-input [isReadOnly]="false" formControlName="favourite"></cmss-form-checkbox-input>
-        <nz-form-explain *ngIf="validateForm.get('favourite').dirty && validateForm.get('favourite').hasError('required')">The input is required!</nz-form-explain>
-      </nz-form-control>
-    </nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="favourite">Favourite</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <cmss-form-checkbox-group [isReadOnly]="false" formControlName="favourite"></cmss-form-checkbox-group>
+      <nz-form-explain *ngIf="validateForm.get('favourite').dirty && validateForm.get('favourite').hasError('required')">The input is required!</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="phones">Phones</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <cmss-form-multi-input [inputWidth]="120" formControlName="phones"></cmss-form-multi-input>
+      <nz-form-explain *ngIf="validateForm.get('phones').dirty && validateForm.get('phones').errors">
+        <ng-container *ngIf="validateForm.get('phones').hasError('required')">
+          The input is required!
+        </ng-container>
+        <ng-container *ngIf="validateForm.get('phones').hasError('is-phone-pattern')">
+          The input is invalid phone!
+        </ng-container>
+      </nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="article">Article</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <input nz-input type="text" formControlName="article" id="article">
+      <nz-form-explain *ngIf="validateForm.get('article').dirty && validateForm.get('article').hasError('has-no-control-char')">The input is invalid!</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="url">Url</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <input nz-input type="text" formControlName="url" id="url">
+      <nz-form-explain *ngIf="validateForm.get('url').dirty && validateForm.get('url').hasError('is-url-pattern')">The input is invalid!</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
 </form>

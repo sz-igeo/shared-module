@@ -7,8 +7,6 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TestComponent } from './components/test/test.component';
-import { HomeComponent } from './components/home/home.component';
 
 // import our module
 import { SharedModule } from './modules/shared/shared.module';
@@ -17,8 +15,6 @@ import { SharedModule } from './modules/shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent,
-    HomeComponent,
   ],
   imports: [
     BrowserModule,

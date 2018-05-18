@@ -7,7 +7,7 @@ import {
   Validators
 } from '@angular/forms';
 
-import { CheckboxInputValidator, PasswordsValidator } from '../../modules/shared/validators';
+import { CheckboxGroupValidator, MultiInputValidator, PasswordsValidator, StringValidator } from '../../modules/shared/validators';
 
 @Component({
   selector: 'cmss-form',
@@ -37,7 +37,10 @@ export class FormComponent implements OnInit {
           PasswordsValidator.equals('password', 'checkPassword')
         ]
       ],
-      favourite: [this.authenticationList, [CheckboxInputValidator.required()]]
+      favourite: [this.authenticationList, [CheckboxGroupValidator.required()]],
+      phones: [null, [MultiInputValidator.required(), , MultiInputValidator.isPhonePattern()]],
+      article: ['asdfad', [StringValidator.hasNoControlChar()]],
+      url: ['http://www.qq.com', [StringValidator.isUrlPattern()]]
     });
   }
 
