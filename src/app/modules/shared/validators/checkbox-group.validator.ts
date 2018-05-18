@@ -1,6 +1,6 @@
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
-export class CheckboxInputValidator {
+export class CheckboxGroupValidator {
   public static required() {
     return (control: FormControl): { [s: string]: boolean } => {
       const checkedItems = control.value.filter(r => r.checked);

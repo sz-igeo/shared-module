@@ -3,17 +3,17 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 export const EXE_CHECKBOX_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => FormCheckboxInputComponent),
+  useExisting: forwardRef(() => FormCheckboxGroupComponent),
   multi: true
 };
 
 @Component({
-  selector: 'cmss-form-checkbox-input',
-  templateUrl: './form-checkbox-input.component.html',
-  styleUrls: ['./form-checkbox-input.component.scss'],
+  selector: 'cmss-form-checkbox-group',
+  templateUrl: './form-checkbox-group.component.html',
+  styleUrls: ['./form-checkbox-group.component.scss'],
   providers: [EXE_CHECKBOX_VALUE_ACCESSOR]
 })
-export class FormCheckboxInputComponent implements ControlValueAccessor {
+export class FormCheckboxGroupComponent implements ControlValueAccessor {
   @Input() isReadOnly: boolean;
 
   _items: Array<any>;

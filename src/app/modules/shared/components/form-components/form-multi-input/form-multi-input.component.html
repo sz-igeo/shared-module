@@ -1,13 +1,14 @@
-<!-- <div class="wrapper">
-  <ng-container *ngFor="let input of inputs; let idx=index">
-    <nz-input [nzPlaceHolder]="'请输入...'" [(ngModel)]="input.value" [nzSize]="'large'" (ngModelChange)="inputChange()"
-    [ngStyle]="{'width': inputWidth + 'px', 'margin': '0 5px 5px 0' }">
-      <ng-template #suffix>
-        <i class="iconfont icon-cuohao icon-delete" (click)="deleteInput(input, idx)"></i>
+<div class="wrapper">
+  <div class="input-container" [ngStyle]="{'width': inputWidth + 'px' }" *ngFor="let input of inputs; let idx=index">
+    <nz-input-group nzSize="{{size}}" [nzSuffix]="suffixCloseIcon">
+      <input type="text" nz-input nzSize="{{size}}" placeholder="请输入..." [(ngModel)]="input.value" (ngModelChange)="inputChange()">
+    </nz-input-group>
+    <ng-template #suffixCloseIcon>
+        <i class="anticon anticon-close" (click)="deleteInput(input, idx)"></i>
       </ng-template>
-    </nz-input>
-  </ng-container>
-  <div>
-    <i class="iconfont icon-jiahao icon-add" (click)="addInput()"></i>
   </div>
-</div> -->
+  <div>
+    <i class="anticon anticon-plus" (click)="addInput()"></i>
+  </div>
+</div>
+

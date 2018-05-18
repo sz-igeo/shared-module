@@ -2,14 +2,18 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+
+  .input-container {
+    margin-right: 5px;
+  }
 }
 
-i {
+.anticon {
   cursor: pointer;
-  &.icon-delete {
+  &.anticon-close {
     color: red;
   }
-  &.icon-add {
+  &.anticon-plus {
     color: #2c9cfa;
   }
 }

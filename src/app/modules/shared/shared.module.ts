@@ -5,19 +5,20 @@ import { RouterModule } from '@angular/router';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import {
-  FormCheckboxInputComponent,
+  FormCheckboxGroupComponent,
   FormMultiInputComponent,
   PageJumpPanelComponent
 } from './components';
-
-import { CheckboxInputValidator, PasswordsValidator } from './validators';
+import {ImgsRootPathPipe} from './pipes';
+import { CheckboxGroupValidator, MultiInputValidator, PasswordsValidator, StringValidator } from './validators';
 
 const COMPONENTS = [
-  FormCheckboxInputComponent,
+  FormCheckboxGroupComponent,
   FormMultiInputComponent,
   PageJumpPanelComponent
 ];
-const VALIDATORS = [CheckboxInputValidator, PasswordsValidator];
+const PIPES = [ImgsRootPathPipe];
+const VALIDATORS = [CheckboxGroupValidator, MultiInputValidator, PasswordsValidator, StringValidator];
 
 @NgModule({
   imports: [
@@ -27,8 +28,8 @@ const VALIDATORS = [CheckboxInputValidator, PasswordsValidator];
     ReactiveFormsModule,
     NgZorroAntdModule
   ],
-  exports: [...COMPONENTS],
-  declarations: [...COMPONENTS],
+  exports: [...COMPONENTS, ...PIPES],
+  declarations: [...COMPONENTS, ...PIPES],
   providers: []
 })
 export class SharedModule {

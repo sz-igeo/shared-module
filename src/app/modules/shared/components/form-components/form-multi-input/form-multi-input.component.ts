@@ -1,12 +1,5 @@
 import { Component, Input, OnInit, forwardRef } from '@angular/core';
-import {
-  ControlValueAccessor,
-  NG_VALUE_ACCESSOR,
-  ValidatorFn,
-  AbstractControl,
-  ValidationErrors,
-  NG_VALIDATORS
-} from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 export const EXE_COUNTER_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -14,32 +7,15 @@ export const EXE_COUNTER_VALUE_ACCESSOR: any = {
   multi: true
 };
 
-export const validateCounterRange: ValidatorFn = (
-  control: AbstractControl
-): ValidationErrors => {
-  const validItems = control.value && control.value.filter(item => item.value);
-
-  if (!validItems || validItems.length <= 0) {
-    return { required: true };
-  }
-
-  return null;
-};
-
-export const EXE_COUNTER_VALIDATOR = {
-  provide: NG_VALIDATORS,
-  useValue: validateCounterRange,
-  multi: true
-};
-
 @Component({
   selector: 'cmss-form-multi-input',
   templateUrl: './form-multi-input.component.html',
   styleUrls: ['./form-multi-input.component.scss'],
-  providers: [EXE_COUNTER_VALUE_ACCESSOR, EXE_COUNTER_VALIDATOR]
+  providers: [EXE_COUNTER_VALUE_ACCESSOR]
 })
 export class FormMultiInputComponent implements OnInit, ControlValueAccessor {
   @Input() inputWidth: number;
+  @Input() size: 'small' | 'default' | 'large' = 'default';
 
   private _inputs: Array<any> = [{ value: null }];
   get inputs() {
