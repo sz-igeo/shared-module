@@ -7,18 +7,28 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import {
   FormCheckboxGroupComponent,
   FormMultiInputComponent,
-  PageJumpPanelComponent
+  PageJumpPanelComponent,
 } from './components';
-import {ImgsRootPathPipe} from './pipes';
-import { CheckboxGroupValidator, MultiInputValidator, PasswordsValidator, StringValidator } from './validators';
+import { ImgsRootPathPipe } from './pipes';
+import {
+  CheckboxGroupValidator,
+  MultiInputValidator,
+  PasswordsValidator,
+  StringValidator
+} from './validators';
 
 const COMPONENTS = [
   FormCheckboxGroupComponent,
   FormMultiInputComponent,
-  PageJumpPanelComponent
+  PageJumpPanelComponent,
 ];
 const PIPES = [ImgsRootPathPipe];
-const VALIDATORS = [CheckboxGroupValidator, MultiInputValidator, PasswordsValidator, StringValidator];
+const VALIDATORS = [
+  CheckboxGroupValidator,
+  MultiInputValidator,
+  PasswordsValidator,
+  StringValidator
+];
 
 @NgModule({
   imports: [
@@ -28,7 +38,7 @@ const VALIDATORS = [CheckboxGroupValidator, MultiInputValidator, PasswordsValida
     ReactiveFormsModule,
     NgZorroAntdModule
   ],
-  exports: [...COMPONENTS, ...PIPES],
+  exports: [...COMPONENTS,  ...PIPES],
   declarations: [...COMPONENTS, ...PIPES],
   providers: []
 })
